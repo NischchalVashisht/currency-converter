@@ -1,7 +1,16 @@
 package com.knoldus
 
-class CurrencyConv {
+/**
+ * this class represent the basic functionality of Converting ccurrency
+ */
 
+class CurrencyConv {
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
   def inrTo(amount: Double, convertTo: String): Float = {
     convertTo match {
       case "Dollar" => (amount / 70).toFloat
@@ -18,6 +27,13 @@ class CurrencyConv {
 
   }
 
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
+
   def dollorTo(amount: Double, convertTo: String): Float = {
 
     convertTo match {
@@ -30,9 +46,16 @@ class CurrencyConv {
       case "Dinar" => (amount * 0.30).toFloat
       case "Yuan" => (amount * 6.99).toFloat
       case "Riyal" => (amount * 3.75).toFloat
-      case _ =>throw new Exception("invalid currency")
+      case _ => throw new Exception("invalid currency")
     }
   }
+
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
 
   def poundTo(amount: Double, convertTo: String): Double = {
 
@@ -52,6 +75,13 @@ class CurrencyConv {
 
   }
 
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
+
 
   def euroTo(amount: Double, convertTo: String): Double = {
 
@@ -69,6 +99,13 @@ class CurrencyConv {
     }
   }
 
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
+
   def yenTo(amount: Double, convertTo: String): Double = {
 
     convertTo match {
@@ -85,6 +122,13 @@ class CurrencyConv {
     }
   }
 
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
+
   def ringgitTo(amount: Double, convertTo: String): Double = {
 
     convertTo match {
@@ -100,9 +144,14 @@ class CurrencyConv {
       case _ => throw new Exception("invalid currency")
 
     }
-
-
   }
+
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
 
   def francTo(amount: Double, convertTo: String): Double = {
     convertTo match {
@@ -121,6 +170,13 @@ class CurrencyConv {
     }
   }
 
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
+
   def dinarTo(amount: Double, convertTo: String): Double = {
     convertTo match {
       case "Rupees" => amount * 234.54
@@ -138,6 +194,13 @@ class CurrencyConv {
 
   }
 
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
+
   def yuanTo(amount: Double, convertTo: String): Double = {
     convertTo match {
       case "Rupees" => amount * 10.21
@@ -152,6 +215,13 @@ class CurrencyConv {
       case _ => throw new Exception("invalid currency")
     }
   }
+
+  /**
+   *
+   * @param amount    amoutuser want to change
+   * @param convertTo a method which convert it to specific currency
+   * @return ractually returns the updated amount
+   */
 
   def riyalTo(amount: Double, convertTo: String): Double = {
     convertTo match {

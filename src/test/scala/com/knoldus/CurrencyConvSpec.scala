@@ -21,6 +21,13 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
     assert(expectedResult == actualResult)
   }
 
+  "convertRupeesIntoAnotherCurrencies" should "convert rupees into riyal" in {
+    val actualResult = currency.inrTo(5, "Riyal")
+    val expectedResult = 0.265f
+    assert(expectedResult == actualResult)
+  }
+
+
   "convertRupeesIntoAnotherCurrencies" should "convert rupees into euro" in {
     val actualResult = currency.inrTo(5, "Euro")
     val expectedResult = 0.0625f
@@ -74,7 +81,11 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
     val expectedResult = 4.35f
     assert(expectedResult == actualResult)
   }
-
+  "convertdollorIntoAnotherCurrencies" should "convert dollor into riyal" in {
+    val actualResult = currency.dollorTo(5, "Riyal")
+    val expectedResult = 18.75f
+    assert(expectedResult == actualResult)
+  }
   "convertDollarIntoAnotherCurrencies" should "convert dollar into pound sterling" in {
     val actualResult = currency.dollorTo(5, "Pound")
     val expectedResult = 3.9f
@@ -123,59 +134,63 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
 
 
-"convertPoundIntoAnotherCurrencies" should "convert Pound into euro" in {
-  val actualResult = currency.poundTo(5, "Euro")
-  val expectedResult = 5.5
-  assert(expectedResult == actualResult)
-}
-
+  "convertPoundIntoAnotherCurrencies" should "convert Pound into euro" in {
+    val actualResult = currency.poundTo(5, "Euro")
+    val expectedResult = 5.5
+    assert(expectedResult == actualResult)
+  }
+  "convertPoundIntoAnotherCurrencies" should "convert Pound into dollor" in {
+    val actualResult = currency.poundTo(5, "Dollar")
+    val expectedResult = 6.3
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert Pound into Riyal  sterling" in {
-  val actualResult = currency.poundTo(5, "Riyal")
-  val expectedResult =  24.2
-  assert(expectedResult == actualResult)
-}
+    val actualResult = currency.poundTo(5, "Riyal")
+    val expectedResult = 24.2
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert Pound into yen" in {
-  val actualResult = currency.poundTo(5, "Yen")
-  val expectedResult = 26.45
-  assert(expectedResult == actualResult)
-}
+    val actualResult = currency.poundTo(5, "Yen")
+    val expectedResult = 26.45
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert Pound into canadian" in {
-  try {
-  val actualResult = currency.poundTo(5, "Canadian")
-}
-  catch {
-  case ex: Exception => {
-  assert(ex.getMessage == "invalid currency")
-}
-}
-}
+    try {
+      val actualResult = currency.poundTo(5, "Canadian")
+    }
+    catch {
+      case ex: Exception => {
+        assert(ex.getMessage == "invalid currency")
+      }
+    }
+  }
 
   "convertPoundIntoAnotherCurrencies" should "convert Poundinto ringgit" in {
-  val actualResult = currency.poundTo(5, "Ringgit")
-  val expectedResult = 4.9
-  assert(expectedResult == actualResult)
-}
+    val actualResult = currency.poundTo(5, "Ringgit")
+    val expectedResult = 4.9
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert Pound into Franc" in {
-  val actualResult = currency.poundTo(5, "Franc")
-  val expectedResult = 6.3
-  assert(expectedResult == actualResult)
-}
+    val actualResult = currency.poundTo(5, "Franc")
+    val expectedResult = 6.3
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert Pound into Dinar" in {
-  val actualResult = currency.poundTo(5, "Dinar")
-  val expectedResult = 1.9500000000000002
-  assert(expectedResult == actualResult)
-}
+    val actualResult = currency.poundTo(5, "Dinar")
+    val expectedResult = 1.9500000000000002
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert Poundinto Yuan" in {
-  val actualResult = currency.poundTo(5, "Yuan")
-  val expectedResult = 45.099999999999994
-  assert(expectedResult == actualResult)
-}
+    val actualResult = currency.poundTo(5, "Yuan")
+    val expectedResult = 45.099999999999994
+    assert(expectedResult == actualResult)
+  }
   "convertPoundIntoAnotherCurrencies" should "convert dollar into Rupees" in {
-  val actualResult = currency.poundTo(5, "Rupees")
-  val expectedResult = 440.0
-  assert(expectedResult == actualResult)
-}
-//////////////////////////////////////////
+    val actualResult = currency.poundTo(5, "Rupees")
+    val expectedResult = 440.0
+    assert(expectedResult == actualResult)
+  }
+  //////////////////////////////////////////
 
 
   "convertEuroIntoAnotherCurrencies" should "convertEuro into rupees" in {
@@ -183,10 +198,15 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
     val expectedResult = 400
     assert(expectedResult == actualResult)
   }
+  "convertEuroIntoAnotherCurrencies" should "convertEuro into pound" in {
+    val actualResult = currency.euroTo(5, "Pound")
+    val expectedResult = 4.5
+    assert(expectedResult == actualResult)
+  }
 
   "convertEuroIntoAnotherCurrencies" should "convert Euro into Riyal  sterling" in {
     val actualResult = currency.euroTo(5, "Riyal")
-    val expectedResult =  20.55
+    val expectedResult = 20.55
     assert(expectedResult == actualResult)
   }
   "convertEuroIntoAnotherCurrencies" should "convert Euro into yen" in {
@@ -239,10 +259,15 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
     val expectedResult = 3.15
     assert(expectedResult == actualResult)
   }
+  "convertYenIntoAnotherCurrencies" should "convertYen into pound" in {
+    val actualResult = currency.yenTo(5, "Pound")
+    val expectedResult = 0.035
+    assert(expectedResult == actualResult)
+  }
 
   "convertYenIntoAnotherCurrencies" should "convert Yen into Riyal  sterling" in {
     val actualResult = currency.yenTo(5, "Riyal")
-    val expectedResult =  0.17
+    val expectedResult = 0.17
     assert(expectedResult == actualResult)
   }
   "convertYenIntoAnotherCurrencies" should "convert Yen into Euro" in {
@@ -287,14 +312,20 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
     assert(expectedResult == actualResult)
   }
 
-//////////////////////////////////////
+  //////////////////////////////////////
 
 
   "convertRinggitIntoAnotherCurrencies" should "convertRinggit into rupees" in {
-    val actualResult = currency.yenTo(5, "Rupees")
-    val expectedResult = 3.15
+    val actualResult = currency.ringgitTo(5, "Rupees")
+    val expectedResult = 84.0
     assert(expectedResult == actualResult)
   }
+  "convertRinggitIntoAnotherCurrencies" should "convertRinggit into pound" in {
+    val actualResult = currency.ringgitTo(5, "Pound")
+    val expectedResult = 0.94
+    assert(expectedResult == actualResult)
+  }
+
 
   "convertringgitIntoAnotherCurrencies" should "convert ringgit into Riyal  sterling" in {
     val actualResult = currency.ringgitTo(5, "Riyal")
@@ -344,7 +375,7 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
 
 
-/////////////////////////////////////////
+  /////////////////////////////////////////
 
   "convertfrancIntoAnotherCurrencies" should "convertfranc into rupees" in {
     val actualResult = currency.francTo(5, "Rupees")
@@ -355,6 +386,12 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   "convertfrancIntoAnotherCurrencies" should "convert franc into Riyal  sterling" in {
     val actualResult = currency.francTo(5, "Riyal")
     val expectedResult = 19.2
+    assert(expectedResult == actualResult)
+  }
+
+  "convertfrancIntoAnotherCurrencies" should "convert franc into pound" in {
+    val actualResult = currency.francTo(5, "Pound")
+    val expectedResult = 3.95
     assert(expectedResult == actualResult)
   }
   "convertfrancIntoAnotherCurrencies" should "convert franc into Euro" in {
@@ -380,12 +417,12 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
   "convertfrancIntoAnotherCurrencies" should "convert franc into ringgit" in {
     val actualResult = currency.francTo(5, "Ringgit")
-    val expectedResult =21.200000000000003
+    val expectedResult = 21.200000000000003
     assert(expectedResult == actualResult)
   }
   "convertfrancIntoAnotherCurrencies" should "convert franc into Dinar" in {
     val actualResult = currency.francTo(5, "Dinar")
-    val expectedResult =1.55
+    val expectedResult = 1.55
     assert(expectedResult == actualResult)
   }
   "convertfrancIntoAnotherCurrencies" should "convertfranc into Yuan" in {
@@ -413,6 +450,11 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
     val expectedResult = 61.65
     assert(expectedResult == actualResult)
   }
+  "convertdinarIntoAnotherCurrencies" should "convert dinar into Pound" in {
+    val actualResult = currency.dinarTo(5, "Pound")
+    val expectedResult = 12.75
+    assert(expectedResult == actualResult)
+  }
   "convertdinarIntoAnotherCurrencies" should "convert dinar into Euro" in {
     val actualResult = currency.dinarTo(5, "Euro")
     val expectedResult = 1.6666666666666667
@@ -436,12 +478,12 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
   "convertdinarIntoAnotherCurrencies" should "convert dinar into ringgit" in {
     val actualResult = currency.dinarTo(5, "Ringgit")
-    val expectedResult =68.15
+    val expectedResult = 68.15
     assert(expectedResult == actualResult)
   }
   "convertdinarIntoAnotherCurrencies" should "convert dinar into franc" in {
     val actualResult = currency.dinarTo(5, "Franc")
-    val expectedResult =16.05
+    val expectedResult = 16.05
     assert(expectedResult == actualResult)
   }
   "convertdinarIntoAnotherCurrencies" should "convertdinar into Yuan" in {
@@ -462,6 +504,11 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   "convertyuanIntoAnotherCurrencies" should "convertyuan into rupees" in {
     val actualResult = currency.yuanTo(5, "Rupees")
     val expectedResult = 51.050000000000004
+    assert(expectedResult == actualResult)
+  }
+  "convertyuanIntoAnotherCurrencies" should "convertyuan into pound" in {
+    val actualResult = currency.yuanTo(5, "Pound")
+    val expectedResult = 0.55
     assert(expectedResult == actualResult)
   }
 
@@ -493,7 +540,7 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
   "convertyuanIntoAnotherCurrencies" should "convert yuan into ringgit" in {
     val actualResult = currency.yuanTo(5, "Ringgit")
-    val expectedResult =2.9499999999999997
+    val expectedResult = 2.9499999999999997
     assert(expectedResult == actualResult)
   }
   "convertyuanIntoAnotherCurrencies" should "convert yuan into franc" in {
@@ -508,7 +555,7 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
   "convertyuan IntoAnotherCurrencies" should "convert yuan into dollor" in {
     val actualResult = currency.yuanTo(5, "Dollar")
-    val expectedResult =  0.7000000000000001
+    val expectedResult = 0.7000000000000001
     assert(expectedResult == actualResult)
   }
 
@@ -519,6 +566,12 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   "convertriyalIntoAnotherCurrencies" should "convert riyal into rupees" in {
     val actualResult = currency.riyalTo(5, "Rupees")
     val expectedResult = 95.1
+    assert(expectedResult == actualResult)
+  }
+
+  "convertriyalIntoAnotherCurrencies" should "convert riyal into pound" in {
+    val actualResult = currency.riyalTo(5, "Pound")
+    val expectedResult = 1.05
     assert(expectedResult == actualResult)
   }
 
@@ -550,22 +603,22 @@ class CurrencyConvSpec extends FlatSpec with BeforeAndAfterAll {
   }
   "convertriyalIntoAnotherCurrencies" should "convert riyal into ringgit" in {
     val actualResult = currency.riyalTo(5, "Ringgit")
-    val expectedResult =5.550000000000001
+    val expectedResult = 5.550000000000001
     assert(expectedResult == actualResult)
   }
   "convertriyalIntoAnotherCurrencies" should "convert riyal into franc" in {
     val actualResult = currency.riyalTo(5, "Franc")
-    val expectedResult =1.3
+    val expectedResult = 1.3
     assert(expectedResult == actualResult)
   }
   "convertriyalIntoAnotherCurrencies" should "convertriyal into dinar" in {
     val actualResult = currency.riyalTo(5, "Dinar")
-    val expectedResult =0.405
+    val expectedResult = 0.405
     assert(expectedResult == actualResult)
   }
   "convertriyal IntoAnotherCurrencies" should "convert riyal into dollor" in {
     val actualResult = currency.riyalTo(5, "Dollar")
-    val expectedResult =  1.35
+    val expectedResult = 1.35
     assert(expectedResult == actualResult)
   }
 
